@@ -1,4 +1,4 @@
-package app;
+package flashcard;
 
 public interface CardInterface {
     public String FilterCollection();

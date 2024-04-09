@@ -15,4 +15,6 @@ public interface HolidayLights {
 	 */
 	public List<Light> next();
 	
+	public int getLength();
+
 }

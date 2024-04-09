@@ -1,5 +1,5 @@
-package app;
+package flashcard;
 
 public interface PlayInterface {
-    public void start();
+    void start(String fileName);
 }

@@ -1,28 +1,19 @@
 package lights;
 
-/**
- * This is a simple light that can either be
- * on or off.
- */
-
 public class Light {
 	
-	// Fields
-	private boolean isOn;
+	// Гишүүн өгөгдөл
+	private  boolean isOn;
 	
-	// Constructors
-	/**
-	 * Constructor creates a new light object.
-	 */
+	// Байгуулагч функц
 	public Light() {
-		this(false);
+	 	this(false);
 	}
 	
+	// Гишүүн функц
 	/**
-	 * Constructor creates a new light object with
-	 * the specified isOn state.
-	 * @param isOn - whether this light is on
-	 */
+	//  * @param isOn 
+	//  */
 	public Light(boolean isOn) {
 		this.isOn = isOn;
 	}

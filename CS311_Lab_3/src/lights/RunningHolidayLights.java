@@ -1,21 +1,35 @@
 package lights;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RunningHolidayLights implements HolidayLights {
 	
+	private int length;
+	private List<Light> lights;
 	/**
 	 * Creates new running holiday lights.
 	 * @param length - length of this set of lights.
 	 */
 	public RunningHolidayLights(int length) {
-		// TODO
-		throw new RuntimeException("RunningHolidayLights(length) not yet implemented!");
+		this.length = length;
+		this.lights = new ArrayList<>();
+		for ( int i=0; i< length; i++){
+			lights.add(new Light());
+		}
 	}
 	
 	public List<Light> next() {
-		// TODO
-		throw new RuntimeException("RunningHolidayLights.next() not yet implemented!");
+		for (int i = 0; i < length; i++){
+			Light light = lights.get(i);
+			if (!light.isOn()){
+				light.setOn(true);
+				return lights;
+			}else{
+				light.setOn(false);
+			}
+		}
+		return lights;
 	}
 	
 	/**
@@ -23,8 +37,7 @@ public class RunningHolidayLights implements HolidayLights {
 	 * @return length of this
 	 */
 	public int getLength() {
-		// TODO
-		throw new RuntimeException("RunningHolidayLights.getLength() not yet implemented!");
+		return length;
 	}
 						
 }

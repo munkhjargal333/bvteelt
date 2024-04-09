@@ -1,4 +1,4 @@
-package app;
+package flashcard;
 
 import java.util.Scanner;
 
@@ -8,11 +8,10 @@ public class Manage implements ManageInterface {
     public Manage() {
         this.scanner = new Scanner(System.in);
     }
+
     public static void main(String[] args) {
         Manage manage = new Manage();
         manage.start();
-       //Card card = new Card();
-       //carf.SetCard(test);
     }
 
     public void start() {
@@ -42,56 +41,55 @@ public class Manage implements ManageInterface {
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 3.");
             }
-        }   
+        }
     }
-    
-    public void card(){
-        System.out.println("1. Create new deck");
+
+    public void card() {
+        System.out.println("1. Create new collection");
         System.out.println("2. Edit my collection");
-        System.out.println("3. back");
+        System.out.println("3. Back");
         System.out.print("Enter your choice (1-3): ");
-        
+
         Card card = new Card();
         String choice = scanner.nextLine();
 
         switch (choice) {
             case "1":
-                String setname = card.CreateCollection();
+                String setName = card.CreateCollection();
 
-                boolean l = true;
-                while(l){
-                    System.out.println("1. add card");
-                    System.out.println("2. back");
+                boolean loop = true;
+                while (loop) {
+                    System.out.println("1. Add card");
+                    System.out.println("2. Back");
 
                     String ans = scanner.nextLine();
                     switch (ans) {
                         case "1":
-                            card.SetCard(ans);
+                            card.SetCard(setName);
                             break;
                         case "2":
-                            l= false;
+                            loop = false;
                             break;
                         default:
-                            System.out.print("Enter your choice (1-3): ");
+                            System.out.print("Invalid choice. Please enter 1 or 2: ");
                     }
                 }
                 break;
             case "2":
-                String collname = card.FilterCollection();
-                card.UpdateCard(collname);
+                String collName = card.FilterCollection();
+                card.UpdateCard(collName);
                 break;
             case "3":
                 return;
             default:
                 System.out.println("Invalid choice. Please enter a number between 1 and 3.");
         }
-
     }
 
-    public void play(){
-
-    }
-    public void study() {
-        
+    public void play() {
+        Play play = new Play();
+        System.out.println("Enter the name of the collection you want to study:");
+        String fileName = scanner.nextLine();
+        play.start(fileName);
     }
 }

@@ -1,4 +1,4 @@
-package app;
+package flashcard;
 
 public interface ManageInterface {
     void start();
