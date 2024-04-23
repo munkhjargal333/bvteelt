@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RunningHolidayLights implements HolidayLights {
-	
+
 	private int length;
 	private List<Light> lights;
 	/**
